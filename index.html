@@ -5,142 +5,501 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wanna be My Valentine??</title>
     <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="style1.css" />
     <meta name="description" content="There is a surprise." />
     <meta name="keywords" content="Valentine, Love, Surprise" />
-    <meta name="author" content="Prashant" />
+    <meta name="author" content="Rahul Sanskar" />
     <meta name="robots" content="index, follow" />
     <meta name="revisit-after" content="3 days" />
     <meta name="language" content="English" />
-    <meta name="web_author" content="Prashant" />
-    <meta name="reply-to" content="" />
+    <meta name="web_author" content="Rahul Sanskar" />
+    <meta name="reply-to" content="rahulsanskar1607@gmail.com" />
     <meta name="rating" content="general" />
     <meta name="og:title" content="There is a Surprise" />
     <meta name="og:description" content="There is a surprise." />
     <meta name="og:image" content="https://i.ibb.co/k6xD4nM/New-Project.jpg" />
-    <meta name="og:url" content="https://prashant-valentine.netlify.app/" />
+    <meta name="og:url" content="https://rahul-valentine.netlify.app/" />
     <meta name="og:site_name" content="There is a Surprise" />
     <meta name="og:locale" content="en_US" />
     <meta name="og:type" content="website" />
-    <meta name="og:author" content="Prashant" />
-    <meta name="og:reply-to" content="" />
-    <meta name="og:web_author" content="Prashant" />
+    <meta name="og:author" content="Rahul Sanskar" />
+    <meta name="og:reply-to" content="rahulsanskar1607@gmail.com" />
+    <meta name="og:web_author" content="Rahul Sanskar" />
     <meta name="og:rating" content="general" />
+    <style>
+      /* Hide flower page initially */
+      #flowerPage {
+        display: none;
+      }
+      #flowerPage.active {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        min-height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #ffffff;
+        overflow: hidden;
+        perspective: 1000px;
+      }
+      #valentinePage.hidden {
+        display: none;
+      }
+      /* Ensure Valentine page is centered */
+      #valentinePage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 100vh;
+        width: 100%;
+      }
+      /* Force buttons container to be horizontal */
+      #valentinePage #btns {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 20px !important;
+        flex-wrap: nowrap !important;
+        width: auto !important;
+      }
+      /* Override body styles when flower page is active */
+      body:has(#flowerPage.active) {
+        background-color: #ffffff;
+      }
+      /* Center the flowers container - this is the key fix */
+      #flowerPage .flowers {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%) scale(0.9);
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+      /* Center the night background */
+      #flowerPage .night {
+        position: fixed;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 100%;
+      }
+      /* Ensure all flower children are centered relative to container */
+      #flowerPage .flowers > * {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      /* Override specific flower positions to center them */
+      #flowerPage .flower--2,
+      #flowerPage .flower--3 {
+        left: 50% !important;
+      }
+      /* Pulse animation for SURPRISE button */
+      @keyframes pulse {
+        0%, 100% {
+          transform: scale(1);
+          box-shadow: 0 0 20px rgba(255, 79, 153, 0.5);
+        }
+        50% {
+          transform: scale(1.1);
+          box-shadow: 0 0 40px rgba(255, 79, 153, 0.8);
+        }
+      }
+      .surprise-button {
+        background: linear-gradient(45deg, #ff4f99, #ff71ac);
+        border: none;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+      }
+      .surprise-button:hover {
+        transform: scale(1.15) !important;
+        box-shadow: 0 0 50px rgba(255, 79, 153, 1) !important;
+      }
+    </style>
   </head>
   <body>
-    <div class="flex f-aps">
-      <p>
-        Made with ❤️ by
-        <a rel="noopener" href="https://www.linkedin.com/in/mjhasan21/" target="_blank">Your Teddy</a>
+    <!-- Valentine Question Page -->
+    <div id="valentinePage">
+      <div class="flex f-aps">
+        <p>
+          Made with ❤️ by
+          <a rel="noopener" href="https://github.com/Rahul-Sanskar" target="_blank">Your Kitty 😽</a>
         </p>
-      </p>
-      <a rel="noopener" target="_blank" href="https://github.com/junayed-hasan/
+        <a rel="noopener" target="_blank" href="https://github.com/Rahul-Sanskar/valentines-project">
+          <img
+            class="image2"
+            src="https://logodix.com/logo/1205168.png"
+            alt="GitHub"
+            id="heart1"
+          />
+        </a>
+      </div>
+      <h1 class="headerText" id="wedate">Will You Be My Valentine, Babe? 🥺</h1>
+      <img class="image" src="https://github.com/NikhilMarko03/resources/blob/main/happy1.gif?raw=true" alt="heyy" id="mainImg" />
       
-      ">
-        <img
-          class="image2"
-          src="https://logodix.com/logo/1205168.png"
-          alt="heyy"
-          id="heart1"
-        />
-      </a>
-    </div>
-    <h1 class="headerText" id="wedate">Will You Be My Valentine, Babe? 🥺</h1>
-    <img class="image" src="https://github.com/NikhilMarko03/resources/blob/main/happy1.gif?raw=true" alt="heyy" id="mainImg" />
-    <div class="flex" id="btns">
-      <button
-        class="button"
-        id="yes"
-        onmouseenter="happy()"
-        onmouseleave="normal()"
-        onclick="yes()"
-      >
-        Yes 🥰
+      <!-- SURPRISE Button (hidden initially) -->
+      <button class="button surprise-button" id="surpriseBtn" onclick="showSurprise()" style="display: none; margin-top: 20px; font-size: 24px; padding: 20px 40px; animation: pulse 1.5s infinite;">
+        🎁 SURPRISE 🎁
       </button>
-      <button
-        class="button"
-        id="no"
-        onmouseenter="angry()"
-        onmouseleave="normal()"
-        onclick="no()"
-      >
-        No 😭
-      </button>
-    </div>
-    <div class="absImages" id="absImg">
-      <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
-      <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
-      <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
-      <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
-      <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
-      <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
-      <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
-      <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
-      <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
-      <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
-
-      <!-- <img class="image2" src="./resources/sad.gif" alt="heyy" /> -->
-    </div>
-
-    <div class="model" id="model2">
-      <audio id="happyMusic" style="opacity: 0" controls loop>
-        <source src="./resources/happy.mp3" type="audio/mp3" />
-        Your browser does not support the audio element.
-      </audio>
-      <div class="model-content">
-        <p class="modelText" id="modelText2">I Love you 😘😘</p>
-        <img
-          class="modelImg"
-          id="modelImg2"
-          src="https://takelessons.com/blog/wp-content/uploads/2013/07/happy-cat.gif"
-          alt="heyy"
-        />
+      
+      <div class="flex" id="btns">
         <button
           class="button"
           id="yes"
           onmouseenter="happy()"
           onmouseleave="normal()"
-          onclick="ly2()"
+          onclick="yes()"
         >
-          Love You Too 🥰
+          Yes 🥰
+        </button>
+        <button
+          class="button"
+          id="no"
+          onmouseenter="angry()"
+          onmouseleave="normal()"
+          onclick="no()"
+        >
+          No 😭
         </button>
       </div>
-    </div>
+      <div class="absImages" id="absImg">
+        <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
+        <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
+        <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
+        <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
+        <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
+        <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
+        <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
+        <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
+        <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
+        <img class="image1" src="https://github.com/NikhilMarko03/resources/blob/main/heart.gif?raw=true" alt="heyy" />
+      </div>
 
-    <div id="model" class="model">
-      <audio id="sadMusic" style="opacity: 0" controls loop>
-        <source src="./resources/sad.mp3" type="audio/mp3" />
-        Your browser does not support the audio element.
-      </audio>
-      <div class="model-content">
-        <p class="modelText" id="modelText">Please</p>
-        <img
-          class="modelImg"
-          id="modelImg"
-          src="https://media1.tenor.com/images/9413ffc5a11722a3cc456a88810750bd/tenor.gif?itemid=14193216"
-          alt="heyy"
-        />
-        <div class="flex">
+      <div class="model" id="model2">
+        <!-- Audio removed - add your own music file if desired -->
+        <audio id="happyMusic" style="opacity: 0; display: none;" controls loop>
+          <source src="ay_mi_gatito_miau_miau.mp3" type="audio/mp3" />
+          Your browser does not support the audio element.
+        </audio>
+        <div class="model-content">
+          <p class="modelText" id="modelText2">I Love you 😘😘</p>
+          <img
+            class="modelImg"
+            id="modelImg2"
+            src="https://media.tenor.com/R7eFZxBpr6kAAAAj/cat.gif"
+            alt="heyy"
+          />
           <button
             class="button"
             id="yes"
             onmouseenter="happy()"
             onmouseleave="normal()"
-            onclick="yes()"
+            onclick="ly2()"
           >
-            Yes 🥰
-          </button>
-          <button
-            class="button"
-            id="no"
-            onmouseenter="angry()"
-            onmouseleave="normal()"
-            onclick="no()"
-          >
-            No 😭
+            Love You Too 🥰
           </button>
         </div>
       </div>
+
+      <div id="model" class="model">
+        <!-- Audio removed - add your own music file if desired -->
+        <audio id="sadMusic" style="opacity: 0; display: none;" controls loop>
+          <source src="cat_sad_song.mp3" type="audio/mp3" />
+          Your browser does not support the audio element.
+        </audio>
+        <div class="model-content">
+          <p class="modelText" id="modelText">Please</p>
+          <img
+            class="modelImg"
+            id="modelImg"
+            src="https://media1.tenor.com/images/9413ffc5a11722a3cc456a88810750bd/tenor.gif?itemid=14193216"
+            alt="heyy"
+          />
+          <!-- Static Yes button for after 5 No clicks -->
+          <button
+            class="button"
+            id="modalYesBtn"
+            onclick="yes()"
+            style="display: none; margin-top: 20px;"
+          >
+            Yes 🥰
+          </button>
+          <div class="flex" id="modalButtonContainer">
+            <button
+              class="button"
+              id="modalYesButton"
+              onmouseenter="happy()"
+              onmouseleave="normal()"
+              onclick="yes()"
+            >
+              Yes 🥰
+            </button>
+            <button
+              class="button"
+              id="modalNoButton"
+              onmouseenter="angry()"
+              onmouseleave="normal()"
+              onclick="no()"
+            >
+              No 😭
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Flower Animation Page -->
+    <div id="flowerPage" class="not-loaded">
+      <!-- Background Music for Flower Page -->
+      <audio id="flowerMusic" loop>
+        <source src="Lost Sky, Sara Skinner - Dreams pt. II (feat. Sara Skinner) [NCS Release]-[AudioTrimmer.com].mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+      
+      <div class="night" style="text-align: center;">
+        <h1 style="color: rgb(162, 247, 219); margin-top: 3%;">A little floral surprise for you 🌸💐🌸</h1>
+      </div>
+      <div class="flowers">
+
+        <div class="flower flower--1">
+          <div class="flower__leafs flower__leafs--1">
+            <div class="flower__leaf flower__leaf--1"></div>
+            <div class="flower__leaf flower__leaf--2"></div>
+            <div class="flower__leaf flower__leaf--3"></div>
+            <div class="flower__leaf flower__leaf--4"></div>
+            <div class="flower__white-circle"></div>
+            <div class="flower__light flower__light--1"></div>
+            <div class="flower__light flower__light--2"></div>
+            <div class="flower__light flower__light--3"></div>
+            <div class="flower__light flower__light--4"></div>
+            <div class="flower__light flower__light--5"></div>
+            <div class="flower__light flower__light--6"></div>
+            <div class="flower__light flower__light--7"></div>
+            <div class="flower__light flower__light--8"></div>
+          </div>
+          <div class="flower__line">
+            <div class="flower__line__leaf flower__line__leaf--1"></div>
+            <div class="flower__line__leaf flower__line__leaf--2"></div>
+            <div class="flower__line__leaf flower__line__leaf--3"></div>
+            <div class="flower__line__leaf flower__line__leaf--4"></div>
+            <div class="flower__line__leaf flower__line__leaf--5"></div>
+            <div class="flower__line__leaf flower__line__leaf--6"></div>
+          </div>
+        </div>
+
+        <div class="flower flower--2">
+          <div class="flower__leafs flower__leafs--2">
+            <div class="flower__leaf flower__leaf--1"></div>
+            <div class="flower__leaf flower__leaf--2"></div>
+            <div class="flower__leaf flower__leaf--3"></div>
+            <div class="flower__leaf flower__leaf--4"></div>
+            <div class="flower__white-circle"></div>
+            <div class="flower__light flower__light--1"></div>
+            <div class="flower__light flower__light--2"></div>
+            <div class="flower__light flower__light--3"></div>
+            <div class="flower__light flower__light--4"></div>
+            <div class="flower__light flower__light--5"></div>
+            <div class="flower__light flower__light--6"></div>
+            <div class="flower__light flower__light--7"></div>
+            <div class="flower__light flower__light--8"></div>
+          </div>
+          <div class="flower__line">
+            <div class="flower__line__leaf flower__line__leaf--1"></div>
+            <div class="flower__line__leaf flower__line__leaf--2"></div>
+            <div class="flower__line__leaf flower__line__leaf--3"></div>
+            <div class="flower__line__leaf flower__line__leaf--4"></div>
+          </div>
+        </div>
+
+        <div class="flower flower--3">
+          <div class="flower__leafs flower__leafs--3">
+            <div class="flower__leaf flower__leaf--1"></div>
+            <div class="flower__leaf flower__leaf--2"></div>
+            <div class="flower__leaf flower__leaf--3"></div>
+            <div class="flower__leaf flower__leaf--4"></div>
+            <div class="flower__white-circle"></div>
+            <div class="flower__light flower__light--1"></div>
+            <div class="flower__light flower__light--2"></div>
+            <div class="flower__light flower__light--3"></div>
+            <div class="flower__light flower__light--4"></div>
+            <div class="flower__light flower__light--5"></div>
+            <div class="flower__light flower__light--6"></div>
+            <div class="flower__light flower__light--7"></div>
+            <div class="flower__light flower__light--8"></div>
+          </div>
+          <div class="flower__line">
+            <div class="flower__line__leaf flower__line__leaf--1"></div>
+            <div class="flower__line__leaf flower__line__leaf--2"></div>
+            <div class="flower__line__leaf flower__line__leaf--3"></div>
+            <div class="flower__line__leaf flower__line__leaf--4"></div>
+          </div>
+        </div>
+
+        <div class="grow-ans" style="--d:1.2s">
+          <div class="flower__g-long">
+            <div class="flower__g-long__top"></div>
+            <div class="flower__g-long__bottom"></div>
+          </div>
+        </div>
+
+        <div class="growing-grass">
+          <div class="flower__grass flower__grass--1">
+            <div class="flower__grass--top"></div>
+            <div class="flower__grass--bottom"></div>
+            <div class="flower__grass__leaf flower__grass__leaf--1"></div>
+            <div class="flower__grass__leaf flower__grass__leaf--2"></div>
+            <div class="flower__grass__leaf flower__grass__leaf--3"></div>
+            <div class="flower__grass__leaf flower__grass__leaf--4"></div>
+            <div class="flower__grass__leaf flower__grass__leaf--5"></div>
+            <div class="flower__grass__leaf flower__grass__leaf--6"></div>
+            <div class="flower__grass__leaf flower__grass__leaf--7"></div>
+            <div class="flower__grass__leaf flower__grass__leaf--8"></div>
+            <div class="flower__grass__overlay"></div>
+          </div>
+        </div>
+
+        <div class="growing-grass">
+          <div class="flower__grass flower__grass--2">
+            <div class="flower__grass--top"></div>
+            <div class="flower__grass--bottom"></div>
+            <div class="flower__grass__leaf flower__grass__leaf--1"></div>
+            <div class="flower__grass__leaf flower__grass__leaf--2"></div>
+            <div class="flower__grass__leaf flower__grass__leaf--3"></div>
+            <div class="flower__grass__leaf flower__grass__leaf--4"></div>
+            <div class="flower__grass__leaf flower__grass__leaf--5"></div>
+            <div class="flower__grass__leaf flower__grass__leaf--6"></div>
+            <div class="flower__grass__leaf flower__grass__leaf--7"></div>
+            <div class="flower__grass__leaf flower__grass__leaf--8"></div>
+            <div class="flower__grass__overlay"></div>
+          </div>
+        </div>
+
+        <div class="grow-ans" style="--d:2.4s">
+          <div class="flower__g-right flower__g-right--1">
+            <div class="leaf"></div>
+          </div>
+        </div>
+
+        <div class="grow-ans" style="--d:2.8s">
+          <div class="flower__g-right flower__g-right--2">
+            <div class="leaf"></div>
+          </div>
+        </div>
+
+        <div class="grow-ans" style="--d:2.8s">
+          <div class="flower__g-front">
+            <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--1">
+              <div class="flower__g-front__leaf"></div>
+            </div>
+            <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--2">
+              <div class="flower__g-front__leaf"></div>
+            </div>
+            <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--3">
+              <div class="flower__g-front__leaf"></div>
+            </div>
+            <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--4">
+              <div class="flower__g-front__leaf"></div>
+            </div>
+            <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--5">
+              <div class="flower__g-front__leaf"></div>
+            </div>
+            <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--6">
+              <div class="flower__g-front__leaf"></div>
+            </div>
+            <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--7">
+              <div class="flower__g-front__leaf"></div>
+            </div>
+            <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--8">
+              <div class="flower__g-front__leaf"></div>
+            </div>
+            <div class="flower__g-front__line"></div>
+          </div>
+        </div>
+
+        <div class="grow-ans" style="--d:3.2s">
+          <div class="flower__g-fr">
+            <div class="leaf"></div>
+            <div class="flower__g-fr__leaf flower__g-fr__leaf--1"></div>
+            <div class="flower__g-fr__leaf flower__g-fr__leaf--2"></div>
+            <div class="flower__g-fr__leaf flower__g-fr__leaf--3"></div>
+            <div class="flower__g-fr__leaf flower__g-fr__leaf--4"></div>
+            <div class="flower__g-fr__leaf flower__g-fr__leaf--5"></div>
+            <div class="flower__g-fr__leaf flower__g-fr__leaf--6"></div>
+            <div class="flower__g-fr__leaf flower__g-fr__leaf--7"></div>
+            <div class="flower__g-fr__leaf flower__g-fr__leaf--8"></div>
+          </div>
+        </div>
+
+        <div class="long-g long-g--0">
+          <div class="grow-ans" style="--d:3s"><div class="leaf leaf--0"></div></div>
+          <div class="grow-ans" style="--d:2.2s"><div class="leaf leaf--1"></div></div>
+          <div class="grow-ans" style="--d:3.4s"><div class="leaf leaf--2"></div></div>
+          <div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--3"></div></div>
+        </div>
+
+        <div class="long-g long-g--1">
+          <div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--0"></div></div>
+          <div class="grow-ans" style="--d:3.8s"><div class="leaf leaf--1"></div></div>
+          <div class="grow-ans" style="--d:4s"><div class="leaf leaf--2"></div></div>
+          <div class="grow-ans" style="--d:4.2s"><div class="leaf leaf--3"></div></div>
+        </div>
+
+        <div class="long-g long-g--2">
+          <div class="grow-ans" style="--d:4s"><div class="leaf leaf--0"></div></div>
+          <div class="grow-ans" style="--d:4.2s"><div class="leaf leaf--1"></div></div>
+          <div class="grow-ans" style="--d:4.4s"><div class="leaf leaf--2"></div></div>
+          <div class="grow-ans" style="--d:4.6s"><div class="leaf leaf--3"></div></div>
+        </div>
+
+        <div class="long-g long-g--3">
+          <div class="grow-ans" style="--d:4s"><div class="leaf leaf--0"></div></div>
+          <div class="grow-ans" style="--d:4.2s"><div class="leaf leaf--1"></div></div>
+          <div class="grow-ans" style="--d:3s"><div class="leaf leaf--2"></div></div>
+          <div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--3"></div></div>
+        </div>
+
+        <div class="long-g long-g--4">
+          <div class="grow-ans" style="--d:4s"><div class="leaf leaf--0"></div></div>
+          <div class="grow-ans" style="--d:4.2s"><div class="leaf leaf--1"></div></div>
+          <div class="grow-ans" style="--d:3s"><div class="leaf leaf--2"></div></div>
+          <div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--3"></div></div>
+        </div>
+
+        <div class="long-g long-g--5">
+          <div class="grow-ans" style="--d:4s"><div class="leaf leaf--0"></div></div>
+          <div class="grow-ans" style="--d:4.2s"><div class="leaf leaf--1"></div></div>
+          <div class="grow-ans" style="--d:3s"><div class="leaf leaf--2"></div></div>
+          <div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--3"></div></div>
+        </div>
+
+        <div class="long-g long-g--6">
+          <div class="grow-ans" style="--d:4.2s"><div class="leaf leaf--0"></div></div>
+          <div class="grow-ans" style="--d:4.4s"><div class="leaf leaf--1"></div></div>
+          <div class="grow-ans" style="--d:4.6s"><div class="leaf leaf--2"></div></div>
+          <div class="grow-ans" style="--d:4.8s"><div class="leaf leaf--3"></div></div>
+        </div>
+
+        <div class="long-g long-g--7">
+          <div class="grow-ans" style="--d:3s"><div class="leaf leaf--0"></div></div>
+          <div class="grow-ans" style="--d:3.2s"><div class="leaf leaf--1"></div></div>
+          <div class="grow-ans" style="--d:3.5s"><div class="leaf leaf--2"></div></div>
+          <div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--3"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="main2.js"></script>
+    <script src="main1.js"></script>
   </body>
-  <script src="main2.js"></script>
 </html>
